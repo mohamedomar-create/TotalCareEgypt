@@ -1,0 +1,13 @@
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;
+/* Brand is square-cornered: logo, slides and stationery use hard edges */
+--radius-0:0;--radius-sm:2px;--radius-pill:999px;
+--border-w:1px;--border-w-strong:2px;
+/* Shadows only for physical mock-ups (paper, cards) and floating layers */
+--shadow-none:none;
+--shadow-float:0 6px 24px rgba(23,23,23,.14);
+--shadow-paper:0 10px 30px rgba(23,23,23,.18),0 2px 6px rgba(23,23,23,.10);
+--ease-standard:cubic-bezier(.2,.7,.2,1); /* @kind other */
+--dur-fast:120ms; /* @kind other */
+--dur-base:200ms; /* @kind other */
+}

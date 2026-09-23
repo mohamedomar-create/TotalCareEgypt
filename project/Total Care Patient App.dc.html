@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/total-care-design-system-49aa07a5-7489-43a9-8fa3-7e3b437cf441/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/total-care-design-system-49aa07a5-7489-43a9-8fa3-7e3b437cf441/tokens/colors.css">
+<link rel="stylesheet" href="_ds/total-care-design-system-49aa07a5-7489-43a9-8fa3-7e3b437cf441/tokens/typography.css">
+<link rel="stylesheet" href="_ds/total-care-design-system-49aa07a5-7489-43a9-8fa3-7e3b437cf441/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/total-care-design-system-49aa07a5-7489-43a9-8fa3-7e3b437cf441/styles.css">
+<script src="_ds/total-care-design-system-49aa07a5-7489-43a9-8fa3-7e3b437cf441/_ds_bundle.js"></script>
+<style>body{margin:0;background:#E9EDEE;font-family:var(--font-primary);color:#1A1A1A}a{color:#438EAB}a:hover{color:#EE2F35}*{box-sizing:border-box}::-webkit-scrollbar{width:0;height:0}</style>
+</helmet>
+<section id="t1" style="padding:48px 48px 56px">
+  <div style="display:flex;align-items:flex-end;gap:32px;flex-wrap:wrap;margin:0 0 36px">
+    <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Logo" height="{{ 56 }}" hint-size="104px,56px"></x-import>
+    <div style="display:flex;flex-direction:column;gap:8px;max-width:760px">
+      <div style="display:flex;align-items:center;gap:10px"><a href="#t1" style="font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1A1A1A;color:#fff;text-decoration:none">1</a><span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#438EAB">Patient app · core flow</span></div>
+      <div style="font-family:var(--font-display);font-size:34px;line-height:1.05;text-transform:uppercase">Care that comes home</div>
+      <div style="font-size:14px;line-height:1.5;color:#595959;text-wrap:pretty">For chronic-care patients at home (respiratory, mobility, diabetes) and the family members who help them. Rent a device, get it delivered and set up, learn it from short videos, and reach a real person when something beeps. Every screen is live: switch language inside 1a or via Tweaks, where you can also swap iOS / Android.</div>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start">
+
+    <div id="1a" style="flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px">
+      <div style="display:flex;align-items:baseline;gap:8px;font-size:12px;color:#595959"><a href="#1a" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1A1A1A;text-decoration:none">1a</a>Welcome &amp; sign-in</div>
+      <x-import component-from-global-scope="{{ frame }}" from="./ios-frame.jsx ./android-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+        <div dir="{{ dir }}" style="height:100%;display:flex;flex-direction:column;background:#fff;font-family:{{ font }};position:relative">
+          <div style="height:380px;flex:none;background:url(img/doctor-laughing.jpg) center 20%/cover;position:relative">
+            <button onClick="{{ toggleLang }}" style="position:absolute;top:{{ padTopBtn }}px;inset-inline-end:16px;height:36px;padding:0 14px;background:#fff;border:0;font:700 13px var(--font-primary);color:#1A1A1A;cursor:pointer;display:flex;align-items:center;gap:6px"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="languages" size="{{ 16 }}" hint-size="16px,16px"></x-import>{{ t.switch_lang }}</button>
+            <div style="position:absolute;inset-inline-start:24px;bottom:-26px;background:#fff;padding:10px 14px"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Logo" height="{{ 40 }}" hint-size="74px,40px"></x-import></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:18px;padding:52px 24px 24px">
+            <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.PulseLine" height="{{ 22 }}" hint-size="41px,22px"></x-import>
+            <div style="font-family:{{ displayFont }};font-size:32px;line-height:1.08;text-transform:{{ caps }};margin-top:-6px">{{ t.welcome_title }}</div>
+            <div style="font-size:15px;line-height:1.5;color:#595959;text-wrap:pretty">{{ t.welcome_body }}</div>
+            <div style="display:flex;gap:8px;align-items:flex-end" dir="ltr">
+              <div style="height:42px;padding:0 12px;border:1px solid #D5DBDD;display:flex;align-items:center;font-size:15px;font-weight:700;color:#1A1A1A">+20</div>
+              <div style="flex:1;min-width:0"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Input" placeholder="10 1234 5678" type="tel" value="{{ phone }}" onChange="{{ setPhone }}" hint-size="100%,42px"></x-import></div>
+            </div>
+            <div style="flex:1"></div>
+            <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Button" full-width="{{ true }}" size="lg" disabled="{{ phoneInvalid }}" hint-size="100%,52px">{{ t.continue }}</x-import>
+            <div style="font-size:12px;color:#666666;text-align:center">{{ t.terms }}</div>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <div id="1b" style="flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px">
+      <div style="display:flex;align-items:baseline;gap:8px;font-size:12px;color:#595959"><a href="#1b" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1A1A1A;text-decoration:none">1b</a>Home</div>
+      <x-import component-from-global-scope="{{ frame }}" from="./ios-frame.jsx ./android-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+        <div dir="{{ dir }}" style="height:100%;display:flex;flex-direction:column;background:#fff;font-family:{{ font }}">
+          <div style="flex:1;overflow:auto;padding:{{ padTop }}px 20px 24px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:6px">
+              <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Logo" height="{{ 34 }}" hint-size="63px,34px"></x-import>
+              <div style="position:relative;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:#1A1A1A"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="bell" size="{{ 22 }}" hint-size="22px,22px"></x-import><span style="position:absolute;top:8px;inset-inline-end:9px;width:8px;height:8px;border-radius:50%;background:#EE2F35"></span></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="font-size:26px;font-weight:700;line-height:1.15">{{ t.greet }}</div>
+              <div style="font-size:15px;color:#595959">{{ t.greet_sub }}</div>
+            </div>
+            <a href="#1f" style="text-decoration:none;background:#438EAB;color:#fff;padding:16px;display:flex;align-items:center;gap:14px">
+              <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="truck" size="{{ 26 }}" hint-size="26px,26px"></x-import>
+              <div style="flex:1;display:flex;flex-direction:column;gap:2px"><div style="font-size:15px;font-weight:700">{{ t.out_for_delivery }}</div><div style="font-size:13px;opacity:.92">{{ t.arriving }}</div></div>
+              <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ chev }}" size="{{ 20 }}" hint-size="20px,20px"></x-import>
+            </a>
+            <div style="background:#E9EDEE;padding:18px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#438EAB">{{ t.active_rental }}</span><span style="font-size:12px;font-weight:700;color:#595959">{{ t.day_of }}</span></div>
+              <div style="display:flex;gap:14px;align-items:center">
+                <div style="width:56px;height:56px;background:#fff;display:flex;align-items:center;justify-content:center;color:#438EAB;flex:none"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="wind" size="{{ 26 }}" hint-size="26px,26px"></x-import></div>
+                <div style="font-size:17px;font-weight:700;line-height:1.25">{{ t.p_o2 }}</div>
+              </div>
+              <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.ProgressBar" value="{{ 40 }}" show-value="{{ false }}" color="#438EAB" height="{{ 6 }}" hint-size="100%,6px"></x-import>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                <div style="font-size:13px;color:#595959;display:flex;align-items:center;gap:6px"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="calendar-check" size="{{ 16 }}" hint-size="16px,16px"></x-import>{{ t.filter_check }}</div>
+                <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Button" variant="outline" size="sm" hint-size="80px,32px">{{ t.renew }}</x-import>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <sc-for list="{{ quick }}" as="q" hint-placeholder-count="4">
+                <a href="{{ q.href }}" style="text-decoration:none;color:#1A1A1A;border:1px solid #D5DBDD;padding:16px 14px;display:flex;flex-direction:column;gap:14px;min-height:104px">
+                  <span style="color:{{ q.color }}"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ q.icon }}" size="{{ 26 }}" hint-size="26px,26px"></x-import></span>
+                  <span style="font-size:15px;font-weight:700;line-height:1.2">{{ q.label }}</span>
+                </a>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#438EAB">{{ t.guide_eyebrow }}</div>
+              <div style="height:168px;background:url(img/nurse-gloves.jpg) center/cover;position:relative;display:flex;align-items:flex-end">
+                <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,23,23,0) 30%,rgba(23,23,23,.78) 100%)"></div>
+                <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#EE2F35;color:#fff;display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="play" size="{{ 22 }}" hint-size="22px,22px"></x-import></div>
+                <div style="position:relative;padding:14px 16px;color:#fff;display:flex;flex-direction:column;gap:2px"><div style="font-size:15px;font-weight:700">{{ t.guide_title }}</div><div style="font-size:12px;opacity:.9">{{ t.guide_meta }}</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:none;display:flex;border-top:1px solid #D5DBDD;background:#fff;padding:8px 4px {{ padBottom }}px">
+            <sc-for list="{{ tabs.home }}" as="tb" hint-placeholder-count="5"><a href="{{ tb.href }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:{{ tb.color }};font-size:10.5px;font-weight:700;padding:4px 0"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ tb.icon }}" size="{{ 22 }}" hint-size="22px,22px"></x-import>{{ tb.label }}</a></sc-for>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <div id="1c" style="flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px">
+      <div style="display:flex;align-items:baseline;gap:8px;font-size:12px;color:#595959"><a href="#1c" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1A1A1A;text-decoration:none">1c</a>Catalogue · rent &amp; buy</div>
+      <x-import component-from-global-scope="{{ frame }}" from="./ios-frame.jsx ./android-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+        <div dir="{{ dir }}" style="height:100%;display:flex;flex-direction:column;background:#fff;font-family:{{ font }}">
+          <div style="flex:none;padding:{{ padTop }}px 20px 0;display:flex;flex-direction:column;gap:14px">
+            <div style="font-size:26px;font-weight:700;padding-top:6px">{{ t.shop_title }}</div>
+            <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Input" placeholder="{{ t.search }}" value="{{ query }}" onChange="{{ setQuery }}" hint-size="100%,42px"></x-import>
+            <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;margin:0 -20px;padding-inline:20px">
+              <sc-for list="{{ cats }}" as="c" hint-placeholder-count="5"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Tag" selected="{{ c.selected }}" onClick="{{ c.onClick }}" style="{{ noShrink }}" hint-size="70px,30px">{{ c.label }}</x-import></sc-for>
+            </div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:0 20px 20px;display:flex;flex-direction:column">
+            <div style="font-size:12px;color:#666666;padding:4px 0 8px">{{ resultCount }}</div>
+            <sc-for list="{{ products }}" as="p" hint-placeholder-count="6">
+              <a href="#1d" style="text-decoration:none;color:#1A1A1A;display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid #D5DBDD">
+                <div style="width:72px;height:72px;background:#E9EDEE;display:flex;align-items:center;justify-content:center;color:#438EAB;flex:none"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ p.icon }}" size="{{ 28 }}" hint-size="28px,28px"></x-import></div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:5px">
+                  <div style="font-size:15px;font-weight:700;line-height:1.25">{{ p.name }}</div>
+                  <div style="font-size:12px;color:#666666">{{ p.catLabel }}</div>
+                  <div style="display:flex;align-items:center;gap:8px"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Badge" tone="{{ p.tone }}" variant="outline" hint-size="44px,22px">{{ p.mode }}</x-import><span style="font-size:14px;font-weight:700">{{ p.price }}</span></div>
+                </div>
+                <span style="color:#BDBDBD"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ chev }}" size="{{ 20 }}" hint-size="20px,20px"></x-import></span>
+              </a>
+            </sc-for>
+          </div>
+          <div style="flex:none;display:flex;border-top:1px solid #D5DBDD;background:#fff;padding:8px 4px {{ padBottom }}px">
+            <sc-for list="{{ tabs.shop }}" as="tb" hint-placeholder-count="5"><a href="{{ tb.href }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:{{ tb.color }};font-size:10.5px;font-weight:700;padding:4px 0"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ tb.icon }}" size="{{ 22 }}" hint-size="22px,22px"></x-import>{{ tb.label }}</a></sc-for>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <div id="1d" style="flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px">
+      <div style="display:flex;align-items:baseline;gap:8px;font-size:12px;color:#595959"><a href="#1d" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1A1A1A;text-decoration:none">1d</a>Product detail · rental</div>
+      <x-import component-from-global-scope="{{ frame }}" from="./ios-frame.jsx ./android-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+        <div dir="{{ dir }}" style="height:100%;display:flex;flex-direction:column;background:#fff;font-family:{{ font }};position:relative">
+          <div style="flex:1;overflow:auto">
+            <div style="height:300px;background:#E9EDEE;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#438EAB">
+              <a href="#1c" style="position:absolute;top:{{ padTopBtn }}px;inset-inline-start:16px;width:40px;height:40px;background:#fff;color:#1A1A1A;display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ back }}" size="{{ 20 }}" hint-size="20px,20px"></x-import></a>
+              <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="wind" size="{{ 64 }}" hint-size="64px,64px"></x-import>
+              <span style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#666666">Product photo</span>
+            </div>
+            <div style="padding:20px;display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;gap:8px;flex-wrap:wrap"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Badge" tone="blue" hint-size="50px,22px">{{ t.rent }}</x-import><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Badge" tone="grey" variant="outline" hint-size="90px,22px">{{ t.cat_resp }}</x-import></div>
+              <div style="font-size:24px;font-weight:700;line-height:1.2">{{ t.p_o2 }}</div>
+              <div style="font-size:14px;line-height:1.55;color:#595959;text-wrap:pretty">{{ t.pd_desc }}</div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#666666">{{ t.pd_duration }}</div>
+                <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+                  <sc-for list="{{ durs }}" as="d" hint-placeholder-count="3">
+                    <button onClick="{{ d.onClick }}" style="padding:12px 8px;border:{{ d.bd }};background:{{ d.bg }};cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:inherit;color:#1A1A1A">
+                      <span style="font-size:13px;font-weight:700">{{ d.label }}</span><span style="font-size:13px;color:#595959">{{ d.price }}</span><span style="font-size:10.5px;font-weight:700;color:#1A9988;min-height:13px">{{ d.save }}</span>
+                    </button>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#666666">{{ t.pd_includes }}</div>
+                <sc-for list="{{ includes }}" as="i" hint-placeholder-count="3"><div style="display:flex;gap:10px;align-items:center;font-size:14px"><span style="color:#438EAB"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ i.icon }}" size="{{ 18 }}" hint-size="18px,18px"></x-import></span>{{ i.label }}</div></sc-for>
+              </div>
+              <div style="background:#E3EFF4;padding:12px 14px;font-size:13px;color:#357590;display:flex;gap:8px;align-items:center"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="truck" size="{{ 18 }}" hint-size="18px,18px"></x-import>{{ t.pd_free }}</div>
+            </div>
+          </div>
+          <sc-if value="{{ added }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:16px;right:16px;bottom:120px;z-index:5"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Toast" tone="success" title="{{ t.added }}" style="{{ toastStyle }}" hint-size="100%,56px"></x-import></div></sc-if>
+          <div style="flex:none;border-top:1px solid #D5DBDD;padding:12px 20px {{ padBottomCta }}px;display:flex;align-items:center;gap:14px">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:18px;font-weight:700">{{ durPrice }}</span><span style="font-size:11px;color:#666666">{{ depositNote }}</span></div>
+            <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Button" size="lg" onClick="{{ addToCart }}" style="{{ flex1 }}" hint-size="180px,52px">{{ t.add_cart }}</x-import>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <div id="1e" style="flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px">
+      <div style="display:flex;align-items:baseline;gap:8px;font-size:12px;color:#595959"><a href="#1e" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1A1A1A;text-decoration:none">1e</a>Cart &amp; checkout</div>
+      <x-import component-from-global-scope="{{ frame }}" from="./ios-frame.jsx ./android-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+        <div dir="{{ dir }}" style="height:100%;display:flex;flex-direction:column;background:#fff;font-family:{{ font }};position:relative">
+          <div style="flex:none;padding:{{ padTop }}px 12px 8px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #D5DBDD">
+            <a href="#1d" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#1A1A1A"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ back }}" size="{{ 20 }}" hint-size="20px,20px"></x-import></a>
+            <div style="font-size:18px;font-weight:700">{{ t.cart_title }}</div>
+          </div>
+          <div style="flex:1;overflow:auto;padding:4px 20px 20px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;flex-direction:column">
+              <sc-for list="{{ cartItems }}" as="c" hint-placeholder-count="2">
+                <div style="display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid #D5DBDD">
+                  <div style="width:56px;height:56px;background:#E9EDEE;display:flex;align-items:center;justify-content:center;color:#438EAB;flex:none"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ c.icon }}" size="{{ 24 }}" hint-size="24px,24px"></x-import></div>
+                  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px"><div style="font-size:14px;font-weight:700;line-height:1.25">{{ c.name }}</div><div style="font-size:12px;color:#666666">{{ c.sub }}</div><div style="font-size:14px;font-weight:700">{{ c.price }}</div></div>
+                  <div style="display:flex;align-items:center;border:1px solid #D5DBDD" dir="ltr">
+                    <button onClick="{{ c.dec }}" style="width:32px;height:32px;border:0;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1A1A1A"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ c.decIcon }}" size="{{ 16 }}" hint-size="16px,16px"></x-import></button>
+                    <span style="width:24px;text-align:center;font-size:14px;font-weight:700">{{ c.qty }}</span>
+                    <button onClick="{{ c.inc }}" style="width:32px;height:32px;border:0;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#1A1A1A"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="plus" size="{{ 16 }}" hint-size="16px,16px"></x-import></button>
+                  </div>
+                </div>
+              </sc-for>
+              <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ false }}"><div style="padding:28px 0;text-align:center;font-size:14px;color:#666666">{{ t.empty }} <a href="#1c">{{ t.shop_title }}</a></div></sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#438EAB;padding-top:2px"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="map-pin" size="{{ 20 }}" hint-size="20px,20px"></x-import></span><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#666666">{{ t.deliver_to }}</span><span style="font-size:14px;font-weight:700">{{ t.address }}</span></div><a href="#1e" style="font-size:13px;font-weight:700;text-decoration:none">{{ t.change }}</a></div>
+              <div style="display:flex;gap:12px;align-items:flex-start"><span style="color:#438EAB;padding-top:2px"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="clock" size="{{ 20 }}" hint-size="20px,20px"></x-import></span><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#666666">{{ t.slot }}</span><span style="font-size:14px;font-weight:700">{{ t.slot_val }}</span></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#666666">{{ t.payment }}</div>
+              <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Radio" name="pay" options="{{ payOpts }}" value="{{ pay }}" onChange="{{ setPay }}" hint-size="100%,100px"></x-import>
+            </div>
+            <div style="background:#E9EDEE;padding:16px;display:flex;flex-direction:column;gap:8px;font-size:14px">
+              <sc-for list="{{ summary }}" as="s" hint-placeholder-count="3"><div style="display:flex;justify-content:space-between;color:#595959"><span>{{ s.label }}</span><span style="color:#1A1A1A">{{ s.value }}</span></div></sc-for>
+              <div style="display:flex;justify-content:space-between;border-top:1px solid #D5DBDD;padding-top:10px;margin-top:4px;font-weight:700;font-size:16px"><span>{{ t.total }}</span><span>{{ total }}</span></div>
+            </div>
+          </div>
+          <sc-if value="{{ placed }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:16px;right:16px;bottom:110px;z-index:5"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Toast" tone="success" title="{{ t.placed }}" style="{{ toastStyle }}" hint-size="100%,56px"></x-import></div></sc-if>
+          <div style="flex:none;border-top:1px solid #D5DBDD;padding:12px 20px {{ padBottomCta }}px">
+            <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Button" size="lg" full-width="{{ true }}" disabled="{{ cartEmpty }}" onClick="{{ placeOrder }}" hint-size="100%,52px">{{ t.place }}</x-import>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <div id="1f" style="flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px">
+      <div style="display:flex;align-items:baseline;gap:8px;font-size:12px;color:#595959"><a href="#1f" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1A1A1A;text-decoration:none">1f</a>Order tracking</div>
+      <x-import component-from-global-scope="{{ frame }}" from="./ios-frame.jsx ./android-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+        <div dir="{{ dir }}" style="height:100%;display:flex;flex-direction:column;background:#fff;font-family:{{ font }}">
+          <div style="flex:1;overflow:auto;display:flex;flex-direction:column">
+            <div style="background:#EE2F35;color:#fff;padding:{{ padTop }}px 20px 24px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px">
+              <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.PulseLine" color="#fff" opacity="{{ 0.14 }}" height="{{ 150 }}" style="{{ pulseWatermark }}" hint-size="279px,150px"></x-import>
+              <div style="display:flex;align-items:center;gap:6px;margin-inline-start:-10px;padding-top:4px"><a href="#1b" style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:#fff"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ back }}" size="{{ 20 }}" hint-size="20px,20px"></x-import></a><span style="font-size:15px;font-weight:700" dir="ltr">{{ t.track_title }}</span></div>
+              <div style="position:relative;display:flex;flex-direction:column;gap:4px"><span style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.9">{{ t.eta_l }}</span><span style="font-size:30px;font-weight:700;line-height:1.1">{{ t.eta }}</span></div>
+            </div>
+            <div style="padding:22px 20px;display:flex;flex-direction:column">
+              <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+                <div style="display:flex;gap:14px">
+                  <div style="display:flex;flex-direction:column;align-items:center;width:22px;flex:none">
+                    <div style="width:22px;height:22px;border-radius:50%;background:{{ s.dot }};border:2px solid {{ s.ring }};display:flex;align-items:center;justify-content:center;color:#fff"><sc-if value="{{ s.done }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="check" size="{{ 12 }}" hint-size="12px,12px"></x-import></sc-if></div>
+                    <div style="width:2px;flex:1;min-height:26px;background:{{ s.line }}"></div>
+                  </div>
+                  <div style="padding-bottom:20px;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:700;color:{{ s.fg }}">{{ s.label }}</span><span style="font-size:12px;color:#666666">{{ s.time }}</span></div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin:0 20px;border:1px solid #D5DBDD;padding:14px;display:flex;align-items:center;gap:12px">
+              <div style="width:48px;height:48px;border-radius:50%;background:url(img/doctor-arms-crossed.jpg) center 15%/cover;flex:none"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:700">{{ t.courier }}</span><span style="font-size:12px;color:#666666">{{ t.courier_sub }}</span></div>
+              <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.IconButton" variant="outline" label="Call" hint-size="40px,40px"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="phone" size="{{ 18 }}" hint-size="18px,18px"></x-import></x-import>
+              <a href="#1h" style="width:40px;height:40px;background:#438EAB;color:#fff;display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="message-circle" size="{{ 18 }}" hint-size="18px,18px"></x-import></a>
+            </div>
+            <div style="margin:14px 20px 20px;background:#E9EDEE;padding:16px;display:flex;gap:14px;align-items:center">
+              <div style="width:84px;height:64px;background:url(img/nurse-gloves.jpg) center/cover;flex:none;display:flex;align-items:center;justify-content:center"><span style="width:30px;height:30px;border-radius:50%;background:#EE2F35;color:#fff;display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="play" size="{{ 14 }}" hint-size="14px,14px"></x-import></span></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:3px"><span style="font-size:14px;font-weight:700">{{ t.prep_title }}</span><span style="font-size:12px;line-height:1.4;color:#595959">{{ t.prep_body }}</span></div>
+            </div>
+          </div>
+          <div style="flex:none;display:flex;border-top:1px solid #D5DBDD;background:#fff;padding:8px 4px {{ padBottom }}px">
+            <sc-for list="{{ tabs.orders }}" as="tb" hint-placeholder-count="5"><a href="{{ tb.href }}" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:{{ tb.color }};font-size:10.5px;font-weight:700;padding:4px 0"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ tb.icon }}" size="{{ 22 }}" hint-size="22px,22px"></x-import>{{ tb.label }}</a></sc-for>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <div id="1g" style="flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px">
+      <div style="display:flex;align-items:baseline;gap:8px;font-size:12px;color:#595959"><a href="#1g" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1A1A1A;text-decoration:none">1g</a>Book a home visit</div>
+      <x-import component-from-global-scope="{{ frame }}" from="./ios-frame.jsx ./android-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+        <div dir="{{ dir }}" style="height:100%;display:flex;flex-direction:column;background:#fff;font-family:{{ font }};position:relative">
+          <div style="flex:none;padding:{{ padTop }}px 12px 8px;display:flex;align-items:center;gap:6px">
+            <a href="#1b" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:#1A1A1A"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ back }}" size="{{ 20 }}" hint-size="20px,20px"></x-import></a>
+          </div>
+          <div style="flex:1;overflow:auto;padding:0 20px 20px;display:flex;flex-direction:column;gap:22px">
+            <div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:26px;font-weight:700;line-height:1.15">{{ t.visit_title }}</div><div style="font-size:14px;color:#595959">{{ t.visit_sub }}</div></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
+                <button onClick="{{ s.onClick }}" style="display:flex;align-items:center;gap:12px;padding:14px;border:{{ s.bd }};background:{{ s.bg }};cursor:pointer;font-family:inherit;color:#1A1A1A;text-align:start">
+                  <span style="color:#438EAB"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ s.icon }}" size="{{ 22 }}" hint-size="22px,22px"></x-import></span>
+                  <span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:700">{{ s.label }}</span><span style="font-size:12px;color:#666666">{{ s.price }}</span></span>
+                  <span style="width:18px;height:18px;border-radius:50%;border:2px solid {{ s.ring }};display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:50%;background:{{ s.dot }}"></span></span>
+                </button>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#666666">{{ t.pick_day }}</div>
+              <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px">
+                <sc-for list="{{ days }}" as="d" hint-placeholder-count="6"><button onClick="{{ d.onClick }}" style="padding:10px 0;border:1px solid {{ d.bd }};background:{{ d.bg }};color:{{ d.fg }};cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:inherit"><span style="font-size:11px;font-weight:700">{{ d.wd }}</span><span style="font-size:18px;font-weight:700">{{ d.d }}</span></button></sc-for>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#666666">{{ t.pick_time }}</div>
+              <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px" dir="ltr">
+                <sc-for list="{{ slots }}" as="s" hint-placeholder-count="6"><button onClick="{{ s.onClick }}" disabled="{{ s.off }}" style="height:44px;border:1px solid {{ s.bd }};background:{{ s.bg }};color:{{ s.fg }};cursor:pointer;font:700 14px var(--font-primary);text-decoration:{{ s.strike }}">{{ s.label }}</button></sc-for>
+              </div>
+            </div>
+          </div>
+          <sc-if value="{{ booked }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;left:16px;right:16px;bottom:110px;z-index:5"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Toast" tone="success" title="{{ t.booked }}" style="{{ toastStyle }}" hint-size="100%,56px">{{ bookedSummary }}</x-import></div></sc-if>
+          <div style="flex:none;border-top:1px solid #D5DBDD;padding:12px 20px {{ padBottomCta }}px">
+            <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Button" size="lg" full-width="{{ true }}" onClick="{{ bookVisit }}" hint-size="100%,52px">{{ t.confirm_visit }}</x-import>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+    <div id="1h" style="flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px">
+      <div style="display:flex;align-items:baseline;gap:8px;font-size:12px;color:#595959"><a href="#1h" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1A1A1A;text-decoration:none">1h</a>Support chat</div>
+      <x-import component-from-global-scope="{{ frame }}" from="./ios-frame.jsx ./android-frame.jsx" width="{{ 402 }}" height="{{ 874 }}" hint-size="402px,874px">
+        <div dir="{{ dir }}" style="height:100%;display:flex;flex-direction:column;background:#fff;font-family:{{ font }}">
+          <div style="flex:none;padding:{{ padTop }}px 12px 10px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #D5DBDD">
+            <a href="#1b" style="width:40px;height:44px;display:flex;align-items:center;justify-content:center;color:#1A1A1A"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="{{ back }}" size="{{ 20 }}" hint-size="20px,20px"></x-import></a>
+            <div style="width:40px;height:40px;border-radius:50%;background:url(img/doctor-laughing.jpg) center 18%/cover;position:relative;flex:none"><span style="position:absolute;bottom:0;inset-inline-end:0;width:11px;height:11px;border-radius:50%;background:#1A9988;border:2px solid #fff"></span></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:1px"><span style="font-size:15px;font-weight:700">{{ t.chat_agent }}</span><span style="font-size:12px;color:#666666">{{ t.chat_role }}</span></div>
+            <x-import component-from-global-scope="TotalCareDesignSystem_49aa07.IconButton" label="Call" hint-size="40px,40px"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="phone" size="{{ 20 }}" hint-size="20px,20px"></x-import></x-import>
+          </div>
+          <div ref="{{ chatRef }}" style="flex:1;overflow:auto;padding:18px 16px;display:flex;flex-direction:column;gap:10px;background:#F6F7F7">
+            <div style="align-self:center;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#666666">{{ t.today }}</div>
+            <sc-for list="{{ msgs }}" as="m" hint-placeholder-count="3">
+              <div style="align-self:{{ m.align }};max-width:82%;display:flex;flex-direction:column;gap:6px">
+                <div style="background:{{ m.bg }};color:{{ m.fg }};border:1px solid {{ m.bd }};padding:10px 13px;font-size:14px;line-height:1.45">{{ m.text }}</div>
+                <sc-if value="{{ m.video }}" hint-placeholder-val="{{ false }}">
+                  <div style="background:#fff;border:1px solid #D5DBDD;display:flex;gap:10px;align-items:center;padding:8px">
+                    <div style="width:72px;height:52px;background:url(img/nurse-gloves.jpg) center/cover;display:flex;align-items:center;justify-content:center;flex:none"><span style="width:24px;height:24px;border-radius:50%;background:#EE2F35;color:#fff;display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="play" size="{{ 12 }}" hint-size="12px,12px"></x-import></span></div>
+                    <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13px;font-weight:700;color:#1A1A1A">{{ t.video_title }}</span><span style="font-size:11px;color:#666666">{{ t.video_meta }}</span></div>
+                  </div>
+                </sc-if>
+                <span style="font-size:10.5px;color:#666666;align-self:{{ m.align }}">{{ m.time }}</span>
+              </div>
+            </sc-for>
+            <sc-if value="{{ typing }}" hint-placeholder-val="{{ false }}"><div style="align-self:flex-start;background:#fff;border:1px solid #D5DBDD;padding:10px 13px;font-size:13px;color:#666666">{{ t.typing }}</div></sc-if>
+          </div>
+          <div style="flex:none;display:flex;gap:8px;overflow-x:auto;padding:10px 16px 0;background:#fff">
+            <sc-for list="{{ quickReplies }}" as="r" hint-placeholder-count="3"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Tag" onClick="{{ r.onClick }}" style="{{ noShrink }}" hint-size="110px,30px">{{ r.label }}</x-import></sc-for>
+          </div>
+          <div style="flex:none;display:flex;gap:8px;align-items:center;padding:10px 16px {{ padBottomCta }}px;background:#fff">
+            <input value="{{ draft }}" onChange="{{ setDraft }}" onKeyDown="{{ draftKey }}" placeholder="{{ t.type }}" style="flex:1;height:44px;border:1px solid #D5DBDD;padding:0 12px;font:15px var(--font-primary);outline:none;border-radius:0;font-family:inherit">
+            <button onClick="{{ sendDraft }}" style="width:44px;height:44px;border:0;background:#EE2F35;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center"><x-import component-from-global-scope="TotalCareDesignSystem_49aa07.Icon" name="send-horizontal" size="{{ 20 }}" style="{{ sendFlip }}" hint-size="20px,20px"></x-import></button>
+          </div>
+        </div>
+      </x-import>
+    </div>
+
+  </div>
+  <p style="margin:32px 0 0;font-size:12px;line-height:1.5;color:#666666">Try next: "add a device guides library screen" · "design the rental renewal flow from <a href="#1b">1b</a>" · "explore a bolder home with a red hero"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;platform&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;iOS&quot;,&quot;Android&quot;],&quot;default&quot;:&quot;iOS&quot;,&quot;tsType&quot;:&quot;'iOS'|'Android'&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;English&quot;,&quot;Arabic&quot;],&quot;default&quot;:&quot;English&quot;,&quot;tsType&quot;:&quot;'English'|'Arabic'&quot;}}">
+const P=[
+ {id:'o2',cat:'resp',icon:'wind',mode:'rent',price:2400},
+ {id:'cpap',cat:'resp',icon:'moon',mode:'rent',price:3200},
+ {id:'neb',cat:'resp',icon:'cloud-fog',mode:'buy',price:1950},
+ {id:'wc',cat:'mob',icon:'accessibility',mode:'rent',price:900},
+ {id:'bed',cat:'mob',icon:'bed',mode:'rent',price:4500},
+ {id:'gluc',cat:'diab',icon:'droplet',mode:'buy',price:850},
+ {id:'strips',cat:'diab',icon:'droplets',mode:'buy',price:420},
+ {id:'oxi',cat:'mon',icon:'activity',mode:'buy',price:650}
+];
+const DUR={'1w':900,'1m':2400,'3m':6300};
+const T={en:{
+ switch_lang:'العربية',welcome_title:'Care that comes home',welcome_body:"Rent home-care devices, follow every delivery and talk to our team whenever you need us. We're here for you and your family.",continue:'Continue',terms:"We'll text you a 4-digit code to sign in.",
+ greet:'Good morning, Nadia',greet_sub:"Here's your care at a glance.",out_for_delivery:'Your order is on its way',arriving:'Arriving today, 4–6 PM',active_rental:'Active rental',day_of:'Day 12 of 30',filter_check:'Filter check · Sat 26 Sep',renew:'Renew',
+ qa_rent:'Rent a device',qa_visit:'Book a visit',qa_guides:'How-to videos',qa_chat:'Chat with us',guide_eyebrow:'Picked for you',guide_title:'Setting up your oxygen concentrator',guide_meta:'Video · 3 min',
+ tab_home:'Home',tab_shop:'Rent & buy',tab_orders:'Orders',tab_chat:'Support',tab_profile:'Profile',
+ shop_title:'Rent & buy',search:'Search devices and supplies',cat_all:'All',cat_resp:'Respiratory',cat_mob:'Mobility',cat_diab:'Diabetes',cat_mon:'Monitoring',rent:'Rent',buy:'Buy',per_mo:'/mo',devices:'items',
+ p_o2:'Oxygen concentrator 5L',p_cpap:'CPAP machine',p_neb:'Compressor nebulizer',p_wc:'Folding wheelchair',p_bed:'Electric home-care bed',p_gluc:'Glucose meter kit',p_strips:'Glucose test strips · 50',p_oxi:'Fingertip pulse oximeter',
+ pd_desc:'A quiet 5-litre concentrator for oxygen therapy at home. Our technician delivers it, sets it up and shows you and your family exactly how to use it.',pd_duration:'Rental period',d_1w:'1 week',d_1m:'1 month',d_3m:'3 months',save:'Save 12%',pd_includes:"What's included",inc1:'Home setup by a certified technician',inc2:'24/7 phone and chat support',inc3:'Free swap if anything goes wrong',pd_free:'Free delivery & setup in Cairo and Giza',deposit:'Refundable deposit',add_cart:'Add to cart',added:'Added to your cart',
+ cart_title:'Your cart',empty:'Your cart is empty.',deliver_to:'Deliver to',address:'12 Road 9, Maadi, Cairo',change:'Change',slot:'Delivery',slot_val:'Tomorrow, 10 AM – 1 PM',payment:'Payment',pay_cod:'Cash on delivery',pay_card:'Card on delivery',pay_insta:'InstaPay',subtotal:'Subtotal',delivery_fee:'Delivery & setup',free:'Free',total:'Total on delivery',place:'Place order',placed:'Order placed. We will text you updates.',rental:'Rental',purchase:'Purchase',
+ track_title:'Order TC-20417',eta_l:'Estimated arrival',eta:'Today, 4–6 PM',st1:'Order confirmed',st2:'Packed at our warehouse',st3:'Out for delivery',st4:'Setup at your home',courier:'Mahmoud · your technician',courier_sub:'Delivers, installs and trains you',prep_title:'Before Mahmoud arrives',prep_body:'Watch the 3-minute setup video so you know what to expect.',
+ visit_title:'Book a home visit',visit_sub:'A Total Care specialist comes to you.',svc1:'Device setup & training',svc1p:'Free with your rental',svc2:'Nurse home visit',svc3:'Device maintenance',pick_day:'Choose a day',pick_time:'Choose a time',confirm_visit:'Confirm visit',booked:"Visit booked. We'll remind you the day before.",
+ chat_agent:'Mariam',chat_role:'Total Care support · online',today:'Today',type:'Write a message',typing:'Mariam is typing…',qr1:'Book a technician',qr2:"Where's my order?",qr3:'Talk to a nurse',
+ m1:"Hi Nadia, I'm Mariam from Total Care. How can I help you today?",m2:'The oxygen machine keeps beeping. Is that normal?',m3:"A short beep when it starts is normal. If it keeps going, check that the filter is pushed all the way in. This 2-minute video shows how:",video_title:'Checking the filter',video_meta:'Video · 2 min',reply:"Thanks, Nadia. I'm on it, give me a moment."
+},ar:{
+ switch_lang:'English',welcome_title:'رعاية تصل إلى بيتك',welcome_body:'استأجر أجهزة الرعاية المنزلية، تابع كل طلب، وكلّم فريقنا في أي وقت تحتاجنا. إحنا معاك ومع أسرتك.',continue:'متابعة',terms:'هنبعت لك كود من 4 أرقام لتسجيل الدخول.',
+ greet:'صباح الخير يا نادية',greet_sub:'كل ما يخص رعايتك في مكان واحد.',out_for_delivery:'طلبك في الطريق',arriving:'يوصل النهارده، 4–6 مساءً',active_rental:'إيجار حالي',day_of:'اليوم 12 من 30',filter_check:'فحص الفلتر · السبت 26 سبتمبر',renew:'تجديد',
+ qa_rent:'استأجر جهاز',qa_visit:'احجز زيارة',qa_guides:'فيديوهات الاستخدام',qa_chat:'كلّمنا',guide_eyebrow:'مختار لك',guide_title:'تركيب جهاز تركيز الأكسجين',guide_meta:'فيديو · 3 دقائق',
+ tab_home:'الرئيسية',tab_shop:'إيجار وشراء',tab_orders:'طلباتي',tab_chat:'الدعم',tab_profile:'حسابي',
+ shop_title:'إيجار وشراء',search:'ابحث عن جهاز أو مستلزمات',cat_all:'الكل',cat_resp:'التنفس',cat_mob:'الحركة',cat_diab:'السكر',cat_mon:'القياس',rent:'إيجار',buy:'شراء',per_mo:'/شهر',devices:'منتج',
+ p_o2:'جهاز تركيز الأكسجين 5 لتر',p_cpap:'جهاز سي باب',p_neb:'جهاز نيبولايزر',p_wc:'كرسي متحرك قابل للطي',p_bed:'سرير طبي كهربائي',p_gluc:'جهاز قياس السكر',p_strips:'شرائط قياس السكر · 50',p_oxi:'جهاز قياس نسبة الأكسجين',
+ pd_desc:'جهاز هادئ بقدرة 5 لتر للعلاج بالأكسجين في البيت. الفنّي بتاعنا بيوصّله ويركّبه ويشرح لك ولأسرتك طريقة استخدامه خطوة بخطوة.',pd_duration:'مدة الإيجار',d_1w:'أسبوع',d_1m:'شهر',d_3m:'3 شهور',save:'وفّر 12%',pd_includes:'يشمل',inc1:'تركيب في البيت بواسطة فنّي معتمد',inc2:'دعم بالتليفون والشات 24/7',inc3:'استبدال مجاني عند أي عطل',pd_free:'توصيل وتركيب مجاني في القاهرة والجيزة',deposit:'تأمين مسترد',add_cart:'أضف للسلة',added:'اتضاف للسلة',
+ cart_title:'سلتك',empty:'السلة فاضية.',deliver_to:'التوصيل إلى',address:'12 شارع 9، المعادي، القاهرة',change:'تغيير',slot:'موعد التوصيل',slot_val:'بكرة، 10 ص – 1 م',payment:'الدفع',pay_cod:'كاش عند الاستلام',pay_card:'كارت عند الاستلام',pay_insta:'إنستاباي',subtotal:'المجموع',delivery_fee:'التوصيل والتركيب',free:'مجاناً',total:'الإجمالي عند الاستلام',place:'تأكيد الطلب',placed:'تم تأكيد طلبك. هنبعت لك التحديثات.',rental:'إيجار',purchase:'شراء',
+ track_title:'طلب TC-20417',eta_l:'الوصول المتوقع',eta:'النهارده، 4–6 م',st1:'تم تأكيد الطلب',st2:'اتجهز في المخزن',st3:'خرج للتوصيل',st4:'التركيب في بيتك',courier:'محمود · الفنّي بتاعك',courier_sub:'هيوصّل ويركّب ويشرح لك',prep_title:'قبل ما محمود يوصل',prep_body:'شوف فيديو التركيب (3 دقايق) عشان تكون جاهز.',
+ visit_title:'احجز زيارة منزلية',visit_sub:'متخصص من توتال كير يجيلك البيت.',svc1:'تركيب وتدريب على الجهاز',svc1p:'مجاناً مع الإيجار',svc2:'زيارة تمريض منزلية',svc3:'صيانة الجهاز',pick_day:'اختر اليوم',pick_time:'اختر الوقت',confirm_visit:'تأكيد الزيارة',booked:'تم الحجز. هنفكّرك قبلها بيوم.',
+ chat_agent:'مريم',chat_role:'دعم توتال كير · متصلة',today:'النهارده',type:'اكتب رسالة',typing:'مريم بتكتب…',qr1:'احجز فنّي',qr2:'طلبي فين؟',qr3:'كلّم ممرضة',
+ m1:'أهلاً يا نادية، أنا مريم من توتال كير. أقدر أساعدك في إيه النهارده؟',m2:'جهاز الأكسجين بيصفّر على طول. ده طبيعي؟',m3:'صفارة قصيرة وقت التشغيل طبيعية. لو مستمرة، اتأكدي إن الفلتر داخل في مكانه كويس. الفيديو ده بيوضح الطريقة في دقيقتين:',video_title:'فحص الفلتر',video_meta:'فيديو · دقيقتين',reply:'شكراً يا نادية، ثواني وهرد عليكي.'
+}};
+class Component extends DCLogic{
+ state={lang:null,cat:'all',query:'',dur:'1m',cart:{o2:1,strips:2},pay:'cod',svc:'setup',day:0,slot:'14:00',booked:false,added:false,placed:false,phone:'',sent:[],draft:'',typing:false};
+ chatRef=React.createRef();
+ componentDidUpdate(prev,ps){
+  if(prev.lang!==this.props.lang&&this.state.lang)this.setState({lang:null});
+  if(ps.sent!==this.state.sent||ps.typing!==this.state.typing){const el=this.chatRef.current;if(el)el.scrollTop=el.scrollHeight;}
+ }
+ L(){return this.state.lang||(this.props.lang==='Arabic'?'ar':'en')}
+ flash(k){this.setState({[k]:true});clearTimeout(this['_'+k]);this['_'+k]=setTimeout(()=>this.setState({[k]:false}),2400)}
+ send(text){
+  text=(text||'').trim();if(!text)return;
+  const now=new Date(),tm=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+  this.setState(s=>({sent:[...s.sent,{me:true,text,time:tm}],draft:'',typing:true}));
+  clearTimeout(this._r);this._r=setTimeout(()=>this.setState(s=>({typing:false,sent:[...s.sent,{me:false,key:'reply',time:tm}]})),1400);
+ }
+ renderVals(){
+  const s=this.state,l=this.L(),t=T[l],ar=l==='ar',ios=(this.props.platform??'iOS')!=='Android';
+  const money=n=>ar?n.toLocaleString('en-US')+' ج.م':'EGP '+n.toLocaleString('en-US');
+  const name=p=>t['p_'+p.id];
+  const tabDefs=[['home','house','#1b'],['shop','shopping-bag','#1c'],['orders','package','#1f'],['chat','message-circle','#1h'],['profile','user','#1a']];
+  const tabs={};['home','shop','orders','chat'].forEach(a=>{tabs[a]=tabDefs.map(([k,icon,href])=>({icon,href,label:t['tab_'+k],color:k===a?'#EE2F35':'#666666'}))});
+  const q=s.query.trim().toLowerCase();
+  const list=P.filter(p=>(s.cat==='all'||p.cat===s.cat)&&(!q||name(p).toLowerCase().includes(q)));
+  const cartItems=Object.entries(s.cart).filter(([,n])=>n>0).map(([id,qty])=>{const p=P.find(x=>x.id===id),rent=p.mode==='rent',unit=rent&&id==='o2'?DUR[s.dur]:p.price;return{icon:p.icon,name:name(p),qty,sub:rent?t.rental+' · '+(id==='o2'?t['d_'+s.dur]:t.d_1m):t.purchase,price:money(unit*qty),amount:unit*qty,decIcon:qty===1?'trash-2':'minus',dec:()=>this.setState(st=>({cart:{...st.cart,[id]:st.cart[id]-1}})),inc:()=>this.setState(st=>({cart:{...st.cart,[id]:st.cart[id]+1}}))}});
+  const sub=cartItems.reduce((a,c)=>a+c.amount,0),dep=(s.cart.o2||0)*5000;
+  const stepsRaw=[['st1','10:12',2],['st2','11:40',2],['st3','13:05',1],['st4',ar?'4–6 م':'4–6 PM',0]];
+  const base=new Date(2026,8,24);
+  const days=[0,1,2,3,4,5].map(i=>{const d=new Date(base);d.setDate(base.getDate()+i);const on=s.day===i;return{wd:d.toLocaleDateString(ar?'ar-EG':'en-GB',{weekday:'short'}),d:String(d.getDate()),bd:on?'#438EAB':'#D5DBDD',bg:on?'#438EAB':'#fff',fg:on?'#fff':'#1A1A1A',onClick:()=>this.setState({day:i})}});
+  const svcs=[['setup','wrench',t.svc1,t.svc1p],['nurse','stethoscope',t.svc2,money(450)],['maint','settings',t.svc3,money(300)]];
+  const initMsgs=[{me:false,key:'m1',time:'13:20'},{me:true,key:'m2',time:'13:21'},{me:false,key:'m3',time:'13:22',video:true}];
+  const selDay=days[s.day];
+  return{
+   t,dir:ar?'rtl':'ltr',font:ar?'var(--font-arabic)':'var(--font-primary)',displayFont:ar?'var(--font-arabic)':'var(--font-display)',caps:ar?'none':'uppercase',
+   frame:ios?'IOSDevice':'AndroidDevice',padTop:ios?54:8,padTopBtn:ios?56:12,padBottom:ios?26:6,padBottomCta:ios?30:12,
+   chev:ar?'chevron-left':'chevron-right',back:ar?'arrow-right':'arrow-left',sendFlip:ar?{transform:'scaleX(-1)'}:{},
+   flex1:{flex:1},noShrink:{flexShrink:0,cursor:'pointer'},toastStyle:{boxShadow:'var(--shadow-float)',width:'100%'},pulseWatermark:{position:'absolute',insetInlineEnd:-60,bottom:-40},
+   toggleLang:()=>this.setState({lang:ar?'en':'ar'}),
+   phone:s.phone,setPhone:e=>this.setState({phone:(e&&e.target?e.target.value:e)||''}),phoneInvalid:s.phone.replace(/\D/g,'').length<10,
+   tabs,
+   quick:[{icon:'wind',label:t.qa_rent,href:'#1c',color:'#EE2F35'},{icon:'calendar-plus',label:t.qa_visit,href:'#1g',color:'#438EAB'},{icon:'circle-play',label:t.qa_guides,href:'#1f',color:'#438EAB'},{icon:'message-circle',label:t.qa_chat,href:'#1h',color:'#438EAB'}],
+   query:s.query,setQuery:e=>this.setState({query:(e&&e.target?e.target.value:e)||''}),
+   cats:['all','resp','mob','diab','mon'].map(c=>({label:t['cat_'+c],selected:s.cat===c,onClick:()=>this.setState({cat:c})})),
+   resultCount:list.length+' '+t.devices,
+   products:list.map(p=>({icon:p.icon,name:name(p),catLabel:t['cat_'+p.cat],mode:p.mode==='rent'?t.rent:t.buy,tone:p.mode==='rent'?'blue':'grey',price:money(p.price)+(p.mode==='rent'?t.per_mo:'')})),
+   durs:['1w','1m','3m'].map(k=>{const on=s.dur===k;return{label:t['d_'+k],price:money(DUR[k]),save:k==='3m'?t.save:'',bd:on?'2px solid #438EAB':'1px solid #D5DBDD',bg:on?'#E3EFF4':'#fff',onClick:()=>this.setState({dur:k})}}),
+   includes:[{icon:'wrench',label:t.inc1},{icon:'headphones',label:t.inc2},{icon:'refresh-cw',label:t.inc3}],
+   durPrice:money(DUR[s.dur]),depositNote:'+ '+t.deposit+' '+money(5000),
+   added:s.added,addToCart:()=>{this.setState(st=>({cart:{...st.cart,o2:(st.cart.o2||0)+1}}));this.flash('added')},
+   cartItems,cartEmpty:cartItems.length===0,
+   payOpts:[{value:'cod',label:t.pay_cod},{value:'card',label:t.pay_card},{value:'insta',label:t.pay_insta}],pay:s.pay,setPay:v=>this.setState({pay:v}),
+   summary:[{label:t.subtotal,value:money(sub)},{label:t.delivery_fee,value:t.free}].concat(dep?[{label:t.deposit,value:money(dep)}]:[]),
+   total:money(sub+dep),placed:s.placed,placeOrder:()=>this.flash('placed'),
+   steps:stepsRaw.map(([k,time,st],i)=>({label:t[k],time,done:st===2,dot:st===2?'#1A9988':st===1?'#EE2F35':'#fff',ring:st===2?'#1A9988':st===1?'#EE2F35':'#BDBDBD',line:i===3?'transparent':st===2?'#1A9988':'#D5DBDD',fg:st===0?'#666666':'#1A1A1A'})),
+   services:svcs.map(([k,icon,label,price])=>{const on=s.svc===k;return{icon,label,price,bd:on?'2px solid #438EAB':'1px solid #D5DBDD',bg:on?'#E3EFF4':'#fff',ring:on?'#438EAB':'#BDBDBD',dot:on?'#438EAB':'transparent',onClick:()=>this.setState({svc:k})}}),
+   days,
+   slots:['10:00','12:00','14:00','16:00','18:00','20:00'].map(v=>{const off=v==='12:00'||v==='20:00',on=s.slot===v&&!off;return{label:v,off,bd:on?'#438EAB':'#D5DBDD',bg:on?'#438EAB':off?'#F6F7F7':'#fff',fg:on?'#fff':off?'#BDBDBD':'#1A1A1A',strike:off?'line-through':'none',onClick:()=>!off&&this.setState({slot:v})}}),
+   booked:s.booked,bookedSummary:selDay.wd+' '+selDay.d+' · '+s.slot,bookVisit:()=>this.flash('booked'),
+   chatRef:this.chatRef,
+   msgs:initMsgs.concat(s.sent).map(m=>({text:m.text||t[m.key],time:m.time,video:!!m.video,align:m.me?'flex-end':'flex-start',bg:m.me?'#438EAB':'#fff',fg:m.me?'#fff':'#1A1A1A',bd:m.me?'#438EAB':'#D5DBDD'})),
+   typing:s.typing,
+   quickReplies:['qr1','qr2','qr3'].map(k=>({label:t[k],onClick:()=>this.send(t[k])})),
+   draft:s.draft,setDraft:e=>this.setState({draft:e.target.value}),draftKey:e=>{if(e.key==='Enter')this.send(s.draft)},sendDraft:()=>this.send(s.draft)
+  };
+ }
+}
+</script>
+</body>
+</html>

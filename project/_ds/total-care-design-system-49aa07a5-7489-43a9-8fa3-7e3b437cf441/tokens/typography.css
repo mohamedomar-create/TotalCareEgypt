@@ -1,0 +1,19 @@
+:root{
+--font-primary:"Circular Std","Figtree",system-ui,sans-serif;
+--font-display:"Code Pro","Questrial","Circular Std","Figtree",sans-serif;
+--font-arabic:"Omar","Tajawal",sans-serif;
+--font-deck-title:"Raleway","Circular Std",sans-serif;
+--font-deck-body:"Lato","Circular Std",sans-serif;
+--fw-book:400; /* @kind font */
+--fw-medium:500; /* @kind font */
+--fw-bold:700; /* @kind font */
+--fw-black:900; /* @kind font */
+/* UI / document scale (px) */
+--fs-display:64px;--fs-h1:44px;--fs-h2:32px;--fs-h3:24px;--fs-h4:19px;
+--fs-body-lg:18px;--fs-body:16px;--fs-small:14px;--fs-caption:12px;--fs-micro:10px;
+--lh-tight:1.05; /* @kind font */
+--lh-heading:1.15; /* @kind font */
+--lh-body:1.5; /* @kind font */
+--ls-caps:0.06em; /* @kind font */
+--ls-caps-wide:0.14em; /* @kind font */
+}

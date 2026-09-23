@@ -1,0 +1,5 @@
+/* Brand fonts (Circular Std, Code Pro, Omar) were NOT supplied as files.
+   Google Fonts substitutes are loaded below; the brand names stay first in each stack
+   so machines with the licensed fonts installed use them.
+   Raleway + Lato are the fonts the official PPTX template actually embeds. */
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;900&family=Questrial&family=Raleway:wght@400;500;700;800&family=Lato:wght@400;700;900&family=Tajawal:wght@300;400;700&display=swap");

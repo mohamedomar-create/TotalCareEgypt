@@ -1,0 +1,53 @@
+:root{
+/* Primary — Brand Guidelines p.05 */
+--tc-red:#EE2F35;
+--tc-blue:#438EAB;
+--tc-black:#171717;
+--tc-white:#FFFFFF;
+/* Secondary communication colours — p.06 (used as gradient pairs) */
+--tc-orange:#ED722E;
+--tc-indigo:#2F41AC;
+/* Neutrals — from the official PPTX theme */
+--tc-ink:#1A1A1A;
+--tc-grey-700:#595959;
+--tc-grey-500:#666666;
+--tc-grey-300:#BDBDBD;
+--tc-mist:#E9EDEE;
+--tc-paper:#F6F7F7;
+--tc-sky:#6AA4C8;
+--tc-teal:#1A9988;
+/* Interaction shades (derived) */
+--tc-red-dark:#C9232A;
+--tc-red-tint:#FDE7E8;
+--tc-blue-dark:#357590;
+--tc-blue-tint:#E3EFF4;
+/* Gradients */
+--grad-warm:linear-gradient(90deg,#ED722E 0%,#EE2F35 100%); /* @kind color */
+--grad-warm-diag:linear-gradient(135deg,#EE2F35 0%,#ED722E 100%); /* @kind color */
+--grad-cool:linear-gradient(90deg,#438EAB 0%,#2F41AC 100%); /* @kind color */
+/* Semantic */
+--text-strong:var(--tc-ink);
+--text-body:var(--tc-grey-700);
+--text-muted:var(--tc-grey-500);
+--text-inverse:var(--tc-white);
+--text-accent:var(--tc-blue);
+--text-alert:var(--tc-red);
+--surface-page:var(--tc-white);
+--surface-subtle:var(--tc-mist);
+--surface-card:var(--tc-white);
+--surface-inverse:var(--tc-black);
+--surface-brand:var(--tc-red);
+--surface-brand-alt:var(--tc-blue);
+--border-default:#D5DBDD;
+--border-strong:var(--tc-grey-500);
+--border-focus:var(--tc-blue);
+--action-primary:var(--tc-red);
+--action-primary-hover:var(--tc-red-dark);
+--action-secondary:var(--tc-blue);
+--action-secondary-hover:var(--tc-blue-dark);
+--status-info:var(--tc-blue);
+--status-success:var(--tc-teal);
+--status-warning:var(--tc-orange);
+--status-danger:var(--tc-red);
+}
+a{color:var(--tc-blue)}a:hover{color:var(--tc-red)}
